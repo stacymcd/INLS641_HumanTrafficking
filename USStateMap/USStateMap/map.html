@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>US Map</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="vis-updated.js"></script>
+    <style>
+        .states {
+            fill:"url(#hash)";
+        }
+        .states :hover {
+            opacity: 50%;
+        }
+
+        .state-borders {
+            fill: none;
+            stroke-width: 0.5px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            pointer-events: none;
+        }
+        .selected {
+            stroke: black;
+            stroke-width: 2px;
+        }
+        .plotbg {
+            fill: lightgray;
+            stroke: lightgray;
+            stroke-width: 4;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 100%; fill:url(#hash)">
+    Total Human Trafficking Cases Across US<br/>
+    <svg id="mapsvg_pr" style="width: 1000px; height: 600px;">
+        <defs>
+            <pattern id="hash" patternUnits="userSpaceOnUse" patternTransform="rotate(45)" width="8" height="8" x="0" y="0"><g style="fill: none; stroke: rgb(202, 202, 202); stroke-width: 7px;"><path d="M 0 0 L 0 10"></path></g></pattern>
+          </defs>
+    </svg>
+</div>
+<div id="stateComparison" style="float: left; width: 1050px; margin: 100px;">
+    State comparison<br/>
+    <div id="stateGraphs" style="float: left; width: 1050px; margin-top: 50px;">     
+    </div>
+</div>
+</body>
+</html>
